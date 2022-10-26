@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home"
 import Category from "../Pages/Category/Category"
 import News from "../Pages/News/News"
 import Login from "../Login/Login";
+import Register from "../Register/Register";
 
 export const routes = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const routes = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
       },
       {
         path: '/category/:id',

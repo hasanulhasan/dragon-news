@@ -68,12 +68,12 @@ const Header = () => {
                 user?.uid ?
                   <>
                     <span>{user.displayName}</span>
-                    <Link className='ps-2'><button onClick={handleLogOut}>Logout</button></Link>
+                    <Link className='ps-2'><button className='btn btn-light' onClick={handleLogOut}>Logout</button></Link>
                   </>
                   :
                   <>
-                    <Link to='/login'><button>Login</button></Link>
-                    <Link to='/register' className='ps-2'><button>Register</button></Link>
+                    <Link to='/login'><button className='btn btn-light'>Login</button></Link>
+                    <Link to='/register' className='ps-2'><button className='btn btn-light'>Register</button></Link>
                   </>
               }
               <Nav.Link href="#home" className='ps-2'>{user?.photoURL
