@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import LeftsideNav from './LeftsideNav/LeftsideNav';
+
+
 const Header = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -36,6 +40,10 @@ const Header = () => {
                 <LeftsideNav></LeftsideNav>
               </div>
             </Nav>
+            <div className='d-flex'>
+              <Nav.Link href="#home">Login</Nav.Link>
+              <Nav.Link href="#home" className='ps-2'>{user?.disPlayName}</Nav.Link>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
