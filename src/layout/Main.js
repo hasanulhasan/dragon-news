@@ -2,6 +2,9 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import Header from '../Pages/Shared/Header';
+import Footer from '../Pages/Footer/Footer';
+import LeftsideNav from '../Pages/Shared/LeftsideNav/LeftsideNav';
+import RightSideNav from '../Pages/Shared/RightSideNav/RightSideNav';
 
 const Main = () => {
   return (
@@ -9,17 +12,18 @@ const Main = () => {
       <Header></Header>
       <Container>
         <Row>
-          <Col>
-            <h2>Side nav</h2>
+          <Col lg='2' className='d-none d-lg-block'>
+            <LeftsideNav></LeftsideNav>
           </Col>
-          <Col>
+          <Col lg='7'>
             <Outlet></Outlet>
           </Col>
-          <Col>
-            <h2>Right side nav</h2>
+          <Col lg='3'>
+            <RightSideNav></RightSideNav>
           </Col>
         </Row>
       </Container>
+      <Footer></Footer>
     </div>
   );
 };

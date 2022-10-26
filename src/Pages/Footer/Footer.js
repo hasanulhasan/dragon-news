@@ -1,9 +1,12 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
 
 const Footer = () => {
   return (
     <div>
-      <h1>copyright for 2022</h1>
+      <Card>
+        <Card.Header>copyright for 2022</Card.Header>
+      </Card>
     </div>
   );
 };
