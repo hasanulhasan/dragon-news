@@ -43,7 +43,7 @@ const Header = () => {
             <Nav className="me-auto">
               <Nav.Link href="#home"><Link to='/'><button className='btn btn-light'>Home</button></Link></Nav.Link>
               <Nav.Link href="#home">FAQ</Nav.Link>
-              <Nav.Link href="#home">About</Nav.Link>
+              <Nav.Link><Link to='about'>About</Link></Nav.Link>
               <Nav.Link href="#home">Other</Nav.Link>
               <Nav.Link href="#home">Feature</Nav.Link>
               <Nav.Link href="#home">Agenda</Nav.Link>
