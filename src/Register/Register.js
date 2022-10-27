@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
+  const [error, setError] = useState('');
   const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
@@ -17,9 +18,14 @@ const Register = () => {
 
     createUser(email, password)
       .then(result => {
-        const user = result.user
+        const user = result.user;
+        setError('');
+        form.reset();
       })
-      .catch(e => { console.error(e) })
+      .catch(e => {
+        console.error(e);
+        setError(e.message)
+      })
   }
   return (
     <div>
@@ -38,10 +44,10 @@ const Register = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control name='password' type="password" placeholder="Password" required />
+          <Form.Control name='password' type="password" placeholder="Password" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+        <Form.Group className="mb-3 text-bg-danger">
+          {error}
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
