@@ -1,11 +1,17 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
+import SingleNews from '../../SingleNews/SingleNews';
 
 const Category = () => {
   const news = useLoaderData();
+  useTitle('Category')
   return (
     <div>
-      <h2>This is category {news.length}</h2>
+      <small>{news.length} news found</small>
+      {
+        news.map(n => <SingleNews n={n._id} n={n}></SingleNews>)
+      }
     </div>
   );
 };
