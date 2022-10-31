@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import SingleNews from '../../SingleNews/SingleNews';
 import NewsCart from '../Shared/NewsCart/NewsCart';
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
   return (
     <div>
       {
-        Allnews.map(news => <NewsCart key={news.id} news={news}></NewsCart>)
+        Allnews.map(n => <SingleNews n={n._id} n={n}></SingleNews>)
       }
     </div>
   );

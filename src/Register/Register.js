@@ -30,8 +30,8 @@ const Register = () => {
       })
   }
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
+    <div className='d flex justify-content-center'>
+      <Form onSubmit={handleSubmit} className='mx-auto w-75 py-3 fw-bolder'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control name='name' type="text" placeholder="Name" required />

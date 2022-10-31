@@ -36,8 +36,8 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <Form onSubmit={handleLogInSubmit}>
+    <div className='d flex justify-content-center'>
+      <Form onSubmit={handleLogInSubmit} className='mx-auto w-75 pt-3 fw-bolder'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control name='email' type="email" placeholder="Enter email" required />
