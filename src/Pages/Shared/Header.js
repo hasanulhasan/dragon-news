@@ -34,7 +34,7 @@ const Header = () => {
   }
 
   return (
-    <div>
+    <div >
       <Navbar bg="light" expand="lg">
         <Container>
           <Navbar.Brand><Link to='/'>Dragon News</Link></Navbar.Brand>

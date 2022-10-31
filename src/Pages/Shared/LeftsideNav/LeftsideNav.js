@@ -11,9 +11,9 @@ const LeftsideNav = () => {
   }, [])
   return (
     <div>
-      <h4>All categories here {categories.length}</h4>
+      <h4 className='fw-bolder bg-light p-2 w-100 text-center'>Categories</h4>
       {
-        categories.map(ct => <p key={ct.id}><Link to={`/category/${ct.id}`}>{ct.name}</Link></p>)
+        categories.map(ct => <Link style={{ textDecoration: 'none' }} key={ct.id} to={`/category/${ct.id}`}><button type="button" class="btn btn-info d-block mt-2 p-2 fw-bolder w-100">{ct.name}</button></Link>)
       }
     </div>
   );
